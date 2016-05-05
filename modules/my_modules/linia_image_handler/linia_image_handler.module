@@ -1,0 +1,117 @@
+<?php
+
+function linia_image_handler_form_alter (&$form, &$form_state, $form_id) {
+    switch($form_id) {
+      case 'producto_colman_node_form': {
+        // $form['#submit'][] = 'linia_image_handler_form_submit';
+        $form['#validate'][] = 'linia_image_handler_form_submit';
+      // dsm($form_state);
+      break;
+      }
+  
+  //    break;
+    }
+  }
+
+function linia_image_handler_form_submit (&$form, &$form_state){
+  $linia = $form_state['values']['field_producto_colman_linia']['und'][0]['tid']; 
+  if ($linia == '10'){
+    $form_state['input']['field_producto_linia_imagen']['und'][0] = array(
+      'alt' => '',
+      'fid' => '618',
+      'display' => '1',
+      'width' => '458',
+      'height' => '363',
+    );
+
+    $form_state['values']['field_producto_linia_imagen']['und'][0] = array(
+      'fid' => '618',
+      'display' => '1',
+      'width' => '458',
+      'height' => '363',
+      'description' => '',
+      'alt' => '',
+      'title' => '',
+    );
+        $form_state['input']['field_orden_interna']['und'][0] = array(
+      'value' => 1,
+    );
+    $form_state['values']['field_orden_interna']['und'][0] = array(
+      'value' => 1,
+    );
+
+  }
+
+  elseif ($linia == '11'){
+    $form_state['input']['field_producto_linia_imagen']['und'][0] = array(
+      'alt' => '',
+      'fid' => '640',
+      'display' => '1',
+      'width' => '458',
+      'height' => '363',
+    );
+
+    $form_state['values']['field_producto_linia_imagen']['und'][0] = array(
+      'fid' => '640',
+      'display' => '1',
+      'width' => '458',
+      'height' => '363',
+      'description' => '',
+      'alt' => '',
+      'title' => '',
+    );
+
+    $form_state['input']['field_orden_interna']['und'][0] = array(
+      'value' => 2,
+    );
+    $form_state['values']['field_orden_interna']['und'][0] = array(
+      'value' => 2,
+    );
+    
+      }
+
+  elseif ($linia == '12'){
+    $form_state['input']['field_producto_linia_imagen']['und'][0] = array(
+      'alt' => '',
+      'fid' => '636',
+      'display' => '1',
+      'width' => '458',
+      'height' => '363',
+    );
+
+    $form_state['values']['field_producto_linia_imagen']['und'][0] = array(
+      'fid' => '636',
+      'display' => '1',
+      'width' => '458',
+      'height' => '363',
+      'description' => '',
+      'alt' => '',
+      'title' => '',
+    );
+
+    $form_state['input']['field_orden_interna']['und'][0] = array(
+      'value' => 3,
+    );
+    $form_state['values']['field_orden_interna']['und'][0] = array(
+      'value' => 3,
+    );
+
+  }
+
+  else {
+    $form_state['input']['field_producto_linia_imagen']['und'][0] = array(
+      'fid' => '0',
+      'display' => '1',
+    );
+ $form_state['values']['field_producto_linia_imagen']['und'][0] = array(
+      'fid' => '0',
+      'display' => '1',
+    );
+
+  }
+
+ // dsm($form_state); 
+}
+
+
+      
